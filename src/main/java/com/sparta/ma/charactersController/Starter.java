@@ -1,4 +1,4 @@
-package com.sparta.ma;
+package com.sparta.ma.charactersController;
 
 /**
  * Hello world!
