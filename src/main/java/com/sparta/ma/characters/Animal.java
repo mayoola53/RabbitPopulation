@@ -11,9 +11,19 @@ public abstract class Animal {
     private final int MAXAGE;
     private SimulationEnviorment simulationEnviorment;
 
-    public Animal(int MAXAGE, int maxNoOfChildren) {
+    public Animal(int breedingAge, int MAXAGE, int maxNoOfChildren) {
+        this.breedingAge = breedingAge;
         this.MAXAGE = MAXAGE;
         this.maxNoOfChildren = maxNoOfChildren;
+    }
+    public int getBreedingAge() {
+        return breedingAge;
+    }
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+    public Boolean getAlive() {
+       return alive;
     }
 
     public int getAge() {
@@ -32,15 +42,31 @@ public abstract class Animal {
         this.gender = gender;
     }
 
-    public boolean isAlive(boolean alive) {
+    public void isAlive() {
+        Boolean alive = false;
         this.alive = alive;
         if (getAge() > this.MAXAGE) {
             alive = false;
         } else {
             alive = true;
         }
-        return alive;
+        setAlive(alive);
     }
+
+    public void giveBirth(){
+    }
+
+    private  boolean canBreed(){
+        if (this.age >=getBreedingAge() ){
+            return true;
+        }
+        return false;
+    }
+
+    public void increamentAge(){
+       this.age++;
+    }
+
 
 
 

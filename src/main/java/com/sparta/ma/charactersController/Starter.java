@@ -8,7 +8,10 @@ public class Starter
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        SimulationEnviorment simulationEnviorment = new SimulationEnviorment();
+        simulationEnviorment.createEnvironment();
+        System.out.println(simulationEnviorment.getRabbitList().toString());
+
     }
 
 
