@@ -1,14 +1,35 @@
 package com.sparta.ma.charactersController;
 import com.sparta.ma.characters.Animal;
 import com.sparta.ma.characters.Rabbit;
-
 import java.util.ArrayList;
-import java.util.List;
 
-public class SimulationEnviorment<list> {
-    ArrayList<Animal>rabbitList =  new ArrayList<>();
+
+public class SimulationEnviorment {
+    private ArrayList<Animal> animals =  new ArrayList<>();
+    private ArrayList<Animal> deadRabbits = new ArrayList<>();
+    private ArrayList<Animal> newRabbits =  new ArrayList<>();
     private int months = 0;
     private int population =0;
+
+    public void setAnimals(ArrayList<Animal> animals) {
+        this.animals = animals;
+    }
+
+    public ArrayList<Animal> getDeadRabbits() {
+        return deadRabbits;
+    }
+
+    public void setDeadRabbits(ArrayList<Animal> deadRabbits) {
+        this.deadRabbits = deadRabbits;
+    }
+
+    public ArrayList<Animal> getNewRabbits() {
+        return newRabbits;
+    }
+
+    public void setNewRabbits(ArrayList<Animal> newRabbits) {
+        this.newRabbits = newRabbits;
+    }
 
     public int getPopulation() {
         return population;
@@ -24,8 +45,8 @@ public class SimulationEnviorment<list> {
        this.population--;
     }
 
-    public ArrayList<Animal> getRabbitList() {
-        return rabbitList;
+    public ArrayList<Animal> getAnimals() {
+        return animals;
     }
     public int getMonths(){
         return months;
@@ -33,7 +54,7 @@ public class SimulationEnviorment<list> {
 
     }
 
-    private  Animal  createRabbit() {
+    public   Animal  createRabbit() {
         Animal rabbit1;
         rabbit1 = new Rabbit(3,60,14);
         int gender = (int)(Math.random()*2)+1;
@@ -44,42 +65,36 @@ public class SimulationEnviorment<list> {
     }
 
     private void addAnimalToArrayList(Animal animal){
-        getRabbitList().add(animal);
+        getAnimals().add(animal);
         incrementPopulation();
     }
 
-    private void removeAmimal(Animal animal){
-        getRabbitList().remove(animal);
-        decrementPopulation();
-    }
+   private void createFirstBreedingPair(){
+       Animal firstMaleRabbit = createRabbit();
+       Animal firstFemaleRabbit =createRabbit();
+       firstFemaleRabbit.setGender(2);
+       firstMaleRabbit.setGender(1);
+       addAnimalToArrayList(firstFemaleRabbit);
+       addAnimalToArrayList(firstMaleRabbit);
+   }
+
 
     public void createEnvironment(){
-        Animal firstMaleRabbit = createRabbit();
-        Animal firstFemaleRabbit =createRabbit();
-        firstFemaleRabbit.setGender(2);
-        firstMaleRabbit.setGender(1);
-        addAnimalToArrayList(firstFemaleRabbit);
-        addAnimalToArrayList(firstMaleRabbit);
-        ArrayList<Animal> deadRabbits = new ArrayList<>();
-        ArrayList<Animal> newRabbits =  new ArrayList<>();
+        createFirstBreedingPair();
 
-        while (months<80) {
-            for(Animal rabbit: rabbitList){
+        while (months<50) {
+            for(Animal rabbit: getAnimals()){
                 rabbit.increamentAge();
                 rabbit.isAlive();
-
                 if(!rabbit.getAlive()){
-                 deadRabbits.add(rabbit);
-
+                 getDeadRabbits().add(rabbit);
                  decrementPopulation();
                 }
-
             }
             months++;
 
         }
-       getRabbitList().removeAll(deadRabbits);
-
+       getAnimals().removeAll(getDeadRabbits());
 
     }
 
