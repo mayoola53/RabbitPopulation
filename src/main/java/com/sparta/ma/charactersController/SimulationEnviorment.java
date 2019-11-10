@@ -86,15 +86,17 @@ public class SimulationEnviorment {
             for(Animal rabbit: getAnimals()){
                 rabbit.increamentAge();
                 rabbit.isAlive();
+                rabbit.canBreed();
+                rabbit.giveBirth();
                 if(!rabbit.getAlive()){
                  getDeadRabbits().add(rabbit);
                  decrementPopulation();
                 }
+
             }
             months++;
 
         }
-       getAnimals().removeAll(getDeadRabbits());
 
     }
 

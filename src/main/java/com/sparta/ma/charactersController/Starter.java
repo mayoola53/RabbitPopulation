@@ -12,10 +12,8 @@ public class Starter
     {
         SimulationEnviorment simulationEnviorment = new SimulationEnviorment();
         simulationEnviorment.createEnvironment();
-        System.out.println(simulationEnviorment.getAnimals().toString());
-        Rabbit rabbit = new Rabbit(3,60,14);
-        rabbit.giveBirth();
-        simulationEnviorment.getNewRabbits();
+//        System.out.println(simulationEnviorment.getAnimals().toString());
+        System.out.println(simulationEnviorment.getNewRabbits());
 
     }
 
