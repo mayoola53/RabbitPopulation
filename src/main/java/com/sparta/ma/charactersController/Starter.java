@@ -11,9 +11,12 @@ public class Starter
     public static void main( String[] args )
     {
         SimulationEnviorment simulationEnviorment = new SimulationEnviorment();
+
         simulationEnviorment.createEnvironment();
 //        System.out.println(simulationEnviorment.getAnimals().toString());
-        System.out.println(simulationEnviorment.getNewRabbits());
+
+        System.out.println(simulationEnviorment.getAnimals().toString());
+        System.out.println(simulationEnviorment.getNewRabbits().toString());
 
     }
 

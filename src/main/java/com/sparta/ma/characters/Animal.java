@@ -9,15 +9,8 @@ public abstract class Animal {
     private int breedingAge;
     private final int maxNoOfChildren;
     private final int MAXAGE;
-    public SimulationEnviorment simulationEnviorment;
 
-    public SimulationEnviorment getSimulationEnviorment() {
-        return simulationEnviorment;
-    }
 
-    public void setSimulationEnviorment(SimulationEnviorment simulationEnviorment) {
-        this.simulationEnviorment = simulationEnviorment;
-    }
 
     public Animal(int breedingAge, int MAXAGE, int maxNoOfChildren) {
         this.breedingAge = breedingAge;
@@ -73,7 +66,7 @@ public abstract class Animal {
     }
 
     public  boolean canBreed(){
-        if (this.age >=this.breedingAge ){
+        if (this.age >=this.breedingAge && this.alive == true){
             return true;
         }
         return false;

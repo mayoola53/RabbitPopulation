@@ -2,6 +2,7 @@ package com.sparta.ma.charactersController;
 import com.sparta.ma.characters.Animal;
 import com.sparta.ma.characters.Rabbit;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 public class SimulationEnviorment {
@@ -92,17 +93,27 @@ public class SimulationEnviorment {
                  getDeadRabbits().add(rabbit);
                  decrementPopulation();
                 }
-
+                breedRabbits(rabbit);
             }
             months++;
 
+      getAnimals().addAll(getNewRabbits());
         }
 
     }
 
 
 
+  public void breedRabbits(Animal rabbit ){
+      Random randomGenerator = new Random();
+      int randomLitterSize = randomGenerator.nextInt(rabbit.getMaxNoOfChildren()) + 1;
+        for(Animal potentialPartner: getAnimals()){
+                for(int i = 1; i <=randomLitterSize; i++){
+                    createRabbit();
+                }
+        }
 
+  }
 
 
 
