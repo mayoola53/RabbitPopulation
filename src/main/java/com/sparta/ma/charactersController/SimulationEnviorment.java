@@ -57,7 +57,7 @@ public class SimulationEnviorment {
 
     public   Animal  createRabbit() {
         Animal rabbit1;
-        rabbit1 = new Rabbit(3,60,14);
+        rabbit1 = new Rabbit(3,60,2);
         int gender = (int)(Math.random()*2)+1;
         rabbit1.setGender(gender);
         rabbit1.setAge(0);
@@ -83,7 +83,7 @@ public class SimulationEnviorment {
     public void createEnvironment(){
         createFirstBreedingPair();
 
-        while (months<50) {
+        while (months<70) {
             for(Animal rabbit: getAnimals()){
                 rabbit.increamentAge();
                 rabbit.isAlive();
@@ -109,8 +109,11 @@ public class SimulationEnviorment {
       int randomLitterSize = randomGenerator.nextInt(rabbit.getMaxNoOfChildren()) + 1;
         for(Animal potentialPartner: getAnimals()){
                 for(int i = 1; i <=randomLitterSize; i++){
-                    createRabbit();
+                    Animal newRabbit = createRabbit();
+                    getNewRabbits().add(newRabbit);
                 }
+
+
         }
 
   }
