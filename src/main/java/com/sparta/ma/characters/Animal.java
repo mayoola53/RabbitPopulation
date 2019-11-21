@@ -1,7 +1,5 @@
 package com.sparta.ma.characters;
 
-import com.sparta.ma.charactersController.SimulationEnviorment;
-
 public abstract class Animal {
     private int age;
     private int gender;

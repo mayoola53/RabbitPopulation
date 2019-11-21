@@ -9,5 +9,8 @@
         <module name="RabbitPopulation" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="RabbitPopulation" target="12" />
+    </bytecodeTargetLevel>
   </component>
 </project>

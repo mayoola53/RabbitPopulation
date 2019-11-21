@@ -1,10 +1,5 @@
 package com.sparta.ma.characters;
 
-import com.sparta.ma.charactersController.SimulationEnviorment;
-
-import java.util.ArrayList;
-import java.util.Random;
-
 public class Rabbit extends Animal {
 
     public Rabbit(int breedingAge, int MAXAGE, int maxNoOfChildren) {

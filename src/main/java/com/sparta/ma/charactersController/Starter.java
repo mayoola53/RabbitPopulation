@@ -1,7 +1,5 @@
 package com.sparta.ma.charactersController;
 
-import com.sparta.ma.characters.Rabbit;
-
 /**
  * Hello world!
  *
@@ -10,13 +8,14 @@ public class Starter
 {
     public static void main( String[] args )
     {
-        SimulationEnviorment simulationEnviorment = new SimulationEnviorment();
+        SimulationEnvironment simulationEnvironment = new SimulationEnvironment();
 
-        simulationEnviorment.createEnvironment();
+        simulationEnvironment.createEnvironment();
 //        System.out.println(simulationEnviorment.getAnimals().toString());
+        System.out.println(simulationEnvironment.getPopulation());
+//        System.out.println(simulationEnvironment.getAnimals().toString());
 
-        System.out.println(simulationEnviorment.getAnimals().toString());
-        System.out.println(simulationEnviorment.getNewRabbits().toString());
+//        System.out.println(simulationEnviorment.getNewRabbits().toString());
 
     }
 

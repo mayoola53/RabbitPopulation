@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class SimulationEnviorment {
+public class SimulationEnvironment {
     private ArrayList<Animal> animals =  new ArrayList<>();
     private ArrayList<Animal> deadRabbits = new ArrayList<>();
     private ArrayList<Animal> newRabbits =  new ArrayList<>();
@@ -61,13 +61,13 @@ public class SimulationEnviorment {
         int gender = (int)(Math.random()*2)+1;
         rabbit1.setGender(gender);
         rabbit1.setAge(0);
-
+        rabbit1.setAlive(true);
+        incrementPopulation();
         return rabbit1;
     }
 
     private void addAnimalToArrayList(Animal animal){
         getAnimals().add(animal);
-        incrementPopulation();
     }
 
    private void createFirstBreedingPair(){
@@ -83,7 +83,7 @@ public class SimulationEnviorment {
     public void createEnvironment(){
         createFirstBreedingPair();
 
-        while (months<70) {
+        while (months<7) {
             for(Animal rabbit: getAnimals()){
                 rabbit.increamentAge();
                 rabbit.isAlive();
@@ -107,15 +107,17 @@ public class SimulationEnviorment {
   public void breedRabbits(Animal rabbit ){
       Random randomGenerator = new Random();
       int randomLitterSize = randomGenerator.nextInt(rabbit.getMaxNoOfChildren()) + 1;
-        for(Animal potentialPartner: getAnimals()){
-                for(int i = 1; i <=randomLitterSize; i++){
-                    Animal newRabbit = createRabbit();
-                    getNewRabbits().add(newRabbit);
-                }
+       if(rabbit.canBreed()& rabbit.getAlive()) {
+           for (Animal potentialPartner : getAnimals()) {
+               if(potentialPartner.canBreed()& potentialPartner.getAlive()) {
+                   for (int i = 1; i <= randomLitterSize; i++) {
+                       Animal newRabbit = createRabbit();
+                       getNewRabbits().add(newRabbit);
+                   }
+               }
 
-
-        }
-
+           }
+       }
   }
 
 
