@@ -7,7 +7,7 @@ public abstract class Animal {
     private int breedingAge;
     private final int maxNoOfChildren;
     private final int MAXAGE;
-
+    private int name;
 
 
     public Animal(int breedingAge, int MAXAGE, int maxNoOfChildren) {
@@ -15,6 +15,15 @@ public abstract class Animal {
         this.MAXAGE = MAXAGE;
         this.maxNoOfChildren = maxNoOfChildren;
     }
+
+    public int getName() {
+        return name;
+    }
+
+    public void setName(int name) {
+        this.name = name;
+    }
+
     public int getBreedingAge() {
         return breedingAge;
     }
@@ -70,7 +79,7 @@ public abstract class Animal {
         return false;
     }
 
-    public void increamentAge(){
+    public void incrementAge(){
        this.age++;
     }
 
