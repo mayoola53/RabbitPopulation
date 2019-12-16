@@ -12,8 +12,6 @@ public class Starter
         simulationEnvironment.createEnvironment();
         simulationEnvironment.getSimulationInfo();
 
-
-
     }
 
 

@@ -12,7 +12,24 @@ public class SimulationEnvironment {
     private ArrayList<Animal> animals =  new ArrayList<>();
     private ArrayList<Animal> deadRabbits = new ArrayList<>();
     private ArrayList<Animal> newRabbits =  new ArrayList<>();
+    private ArrayList<Animal> deadFoxes = new ArrayList<>();
+    private ArrayList<Animal> newFoxes = new ArrayList<>();
 
+    public ArrayList<Animal> getDeadFoxes() {
+        return deadFoxes;
+    }
+
+    public void setDeadFoxes(ArrayList<Animal> deadFoxes) {
+        this.deadFoxes = deadFoxes;
+    }
+
+    public ArrayList<Animal> getNewFoxes() {
+        return newFoxes;
+    }
+
+    public void setNewFoxes(ArrayList<Animal> newFoxes) {
+        this.newFoxes = newFoxes;
+    }
 
     public void setAnimals(ArrayList<Animal> animals) {
         this.animals = animals;
@@ -38,13 +55,18 @@ public class SimulationEnvironment {
         return population;
     }
 
+    public void increamentMonths(){
+        this.months++;
+    }
+
     public void setPopulation(int population) {
         this.population = population;
     }
-   public void incrementPopulation (){
+
+    private void incrementPopulation (){
        this.population++;
    }
-    public void decrementPopulation (){
+    private void decrementPopulation (){
        this.population--;
     }
 
@@ -56,9 +78,9 @@ public class SimulationEnvironment {
 
     }
 
-    public   Animal  createRabbit() {
+    private  Animal  createRabbit() {
         Animal rabbit1;
-        rabbit1 = new Rabbit(3,60,14);
+        rabbit1 = new Rabbit(3,60,1);
         int name = 1;
         int gender =  randomGenerator.nextInt((2-1)+1) + 1;;
         rabbit1.setGender(gender);
@@ -85,12 +107,12 @@ public class SimulationEnvironment {
 
     public void createEnvironment(){
         createFirstBreedingPair();
-        while (months<100) {
+        while (getMonths()<12) {
             for(Animal rabbit: getAnimals()){
                 rabbit.incrementAge();
                 rabbit.isAlive();
                 rabbit.canBreed();
-                rabbit.setName(months++);
+                rabbit.setName(getMonths());
                 rabbit.giveBirth();
                 if(!rabbit.getAlive()){
                  getDeadRabbits().add(rabbit);
@@ -99,9 +121,9 @@ public class SimulationEnvironment {
                 if(rabbit.getAlive()) {
                     breedRabbits(rabbit);
                 }
-              //System.out.println("Rabbit: "+ rabbit.getName() + " is " + rabbit.getAge());
+//             System.out.println("Rabbit: "+ rabbit.getName() + " is " + rabbit.getAge());
             }
-            months++;
+            increamentMonths();
 
       getAnimals().addAll(getNewRabbits());
         }
@@ -117,12 +139,11 @@ public class SimulationEnvironment {
     }
 
 
-  public void breedRabbits(Animal rabbit ){
-
+  private void breedRabbits(Animal rabbit ){
       int randomLitterSize = randomGenerator.nextInt((rabbit.getMaxNoOfChildren()-1)+1) + 1;
-       if(rabbit.canBreed()& rabbit.getAlive() ) {
+       if(rabbit.canBreed()& rabbit.getAlive() && rabbit.getGender()==1 &&rabbit.getMAXAGE()==60 ) {
            for (Animal potentialPartner : getAnimals()) {
-               if(potentialPartner.canBreed()& potentialPartner.getAlive()&&rabbit.getMaxNoOfChildren()==14) {
+               if(potentialPartner.canBreed()& potentialPartner.getAlive() && potentialPartner.getGender()==2 && potentialPartner.getMAXAGE()==60) {
                    for (int i = 1; i <= randomLitterSize; i++) {
                        Animal newRabbit = createRabbit();
                        getNewRabbits().add(newRabbit);
@@ -131,10 +152,14 @@ public class SimulationEnvironment {
 
            }
        }
+
   }
 
 
+private void breedFoxes(Animal foxes){
 
+
+}
 
 
 

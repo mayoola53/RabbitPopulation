@@ -16,6 +16,10 @@ public abstract class Animal {
         this.maxNoOfChildren = maxNoOfChildren;
     }
 
+//    public Animal(){
+//
+//    }
+
     public int getName() {
         return name;
     }
