@@ -152,7 +152,7 @@ public class SimulationEnvironment {
     public void createEnvironment() {
         createFirstRabbitBreedingPair();
         createFirstFoxBreedingPair();
-        while (getYears() < 4) {
+        while (getYears() < 16) {
             for (Animal animal : getAnimals()) {
                 animal.incrementAge();
                 animal.isAlive();
@@ -187,8 +187,13 @@ public class SimulationEnvironment {
             for (Animal potentialPartner : getAnimals()) {
                 if (potentialPartner.canBreed() & potentialPartner.getAlive() && potentialPartner.getGender() == 2 && potentialPartner.getBreedingAge()==animal.getBreedingAge()) {
                     for (int i = 1; i <= randomLitterSize; i++) {
-                        Animal newRabbit = createRabbit();
-                        getNewAnimals().add(newRabbit);
+                       if (potentialPartner.getBreedingAge()==3) {
+                           Animal newRabbit = createRabbit();
+                           getNewAnimals().add(newRabbit);
+                       } else {
+                           Animal newFox = createFox();
+                           getNewAnimals().add(newFox);
+                       }
                     }
                 }
 

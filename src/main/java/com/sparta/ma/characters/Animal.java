@@ -86,8 +86,5 @@ public abstract class Animal {
     public void incrementAge(){
        this.age++;
     }
-    public void incrementName() {this.name++;}
-
-
 
 }
