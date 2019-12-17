@@ -6,13 +6,13 @@ public abstract class Animal {
     private boolean alive;
     private int breedingAge;
     private final int maxNoOfChildren;
-    private final int MAXAGE;
+    private final int MAXAGEINMONTHS;
     private int name;
 
 
-    public Animal(int breedingAge, int MAXAGE, int maxNoOfChildren) {
+    public Animal(int breedingAge, int MAXAGEINMONTHS, int maxNoOfChildren) {
         this.breedingAge = breedingAge;
-        this.MAXAGE = MAXAGE;
+        this.MAXAGEINMONTHS = MAXAGEINMONTHS;
         this.maxNoOfChildren = maxNoOfChildren;
     }
 
@@ -38,8 +38,8 @@ public abstract class Animal {
        return alive;
     }
 
-    public int getMAXAGE() {
-        return MAXAGE;
+    public int getMAXAGEINMONTHS() {
+        return MAXAGEINMONTHS;
     }
 
     public int getAge() {
@@ -65,7 +65,7 @@ public abstract class Animal {
     public void isAlive() {
         Boolean alive = false;
         this.alive = alive;
-        if (getAge() > this.MAXAGE) {
+        if (getAge() > this.MAXAGEINMONTHS) {
             alive = false;
         } else {
             alive = true;
@@ -86,7 +86,7 @@ public abstract class Animal {
     public void incrementAge(){
        this.age++;
     }
-
+    public void incrementName() {this.name++;}
 
 
 
