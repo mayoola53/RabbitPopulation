@@ -15,10 +15,8 @@ public class SimulationEnvironment {
     private int rabbitPopulation = 0;
     private int populationTotal = 0;
     private ArrayList<Animal> animals = new ArrayList<>();
-    private ArrayList<Animal> deadRabbits = new ArrayList<>();
-    private ArrayList<Animal> newRabbits = new ArrayList<>();
-    private ArrayList<Animal> deadFoxes = new ArrayList<>();
-    private ArrayList<Animal> newFoxes = new ArrayList<>();
+    private ArrayList<Animal> deadAnimals = new ArrayList<>();
+    private ArrayList<Animal> newAnimals = new ArrayList<>();
 
 
     public int getFoxPopulation() {
@@ -37,36 +35,20 @@ public class SimulationEnvironment {
         this.rabbitPopulation = rabbitPopulation;
     }
 
-    public ArrayList<Animal> getDeadFoxes() {
-        return deadFoxes;
+    public ArrayList<Animal> getDeadAnimals() {
+        return deadAnimals;
     }
 
-    public void setDeadFoxes(ArrayList<Animal> deadFoxes) {
-        this.deadFoxes = deadFoxes;
+    public void setDeadAnimals(ArrayList<Animal> deadAnimals) {
+        this.deadAnimals = deadAnimals;
     }
 
-    public ArrayList<Animal> getNewFoxes() {
-        return newFoxes;
+    public ArrayList<Animal> getNewAnimals() {
+        return newAnimals;
     }
 
-    public void setNewFoxes(ArrayList<Animal> newFoxes) {
-        this.newFoxes = newFoxes;
-    }
-
-    public ArrayList<Animal> getDeadRabbits() {
-        return deadRabbits;
-    }
-
-    public void setDeadRabbits(ArrayList<Animal> deadRabbits) {
-        this.deadRabbits = deadRabbits;
-    }
-
-    public ArrayList<Animal> getNewRabbits() {
-        return newRabbits;
-    }
-
-    public void setNewRabbits(ArrayList<Animal> newRabbits) {
-        this.newRabbits = newRabbits;
+    public void setNewAnimals(ArrayList<Animal> newAnimals) {
+        this.newAnimals = newAnimals;
     }
 
     public int getPopulationTotal() {
@@ -178,7 +160,7 @@ public class SimulationEnvironment {
                 animal.setName(getYears());
                 animal.giveBirth();
                 if (!animal.getAlive()) {
-                    getDeadRabbits().add(animal);
+                    getDeadAnimals().add(animal);
                     decrementPopulation();
                 }
                 if (animal.getAlive()) {
@@ -187,8 +169,8 @@ public class SimulationEnvironment {
 //             System.out.println("Rabbit: "+ animal.getName() + " is " + animal.getAge());
             }
             incrementYears();
-            getAnimals().addAll(getNewRabbits());
-            getNewRabbits().removeAll(getAnimals());
+            getAnimals().addAll(getNewAnimals());
+            getNewAnimals().removeAll(getAnimals());
 
         }
 
@@ -206,7 +188,7 @@ public class SimulationEnvironment {
                 if (potentialPartner.canBreed() & potentialPartner.getAlive() && potentialPartner.getGender() == 2 && potentialPartner.getBreedingAge()==animal.getBreedingAge()) {
                     for (int i = 1; i <= randomLitterSize; i++) {
                         Animal newRabbit = createRabbit();
-                        getNewRabbits().add(newRabbit);
+                        getNewAnimals().add(newRabbit);
                     }
                 }
 
