@@ -99,7 +99,7 @@ public class SimulationEnvironment {
 
     private Animal createRabbit() {
         Animal rabbit1;
-        rabbit1 = new Rabbit(3, 30, 1);
+        rabbit1 = new Rabbit(10, 15, 1);
         int name = 1;
         int gender = randomGenerator.nextInt((2 - 1) + 1) + 1;
         ;
@@ -113,7 +113,7 @@ public class SimulationEnvironment {
 
     private Animal createFox() {
         Animal fox1;
-        fox1 = new Fox(12, 90, 1);
+        fox1 = new Fox(80, 90, 1);
         int name = 1;
         int gender = randomGenerator.nextInt((2 - 1) + 1) + 1;
         fox1.setGender(gender);
@@ -152,7 +152,7 @@ public class SimulationEnvironment {
     public void createEnvironment() {
         createFirstRabbitBreedingPair();
         createFirstFoxBreedingPair();
-        while (getYears() < 16) {
+        while (getYears() < 50) {
             for (Animal animal : getAnimals()) {
                 animal.incrementAge();
                 animal.isAlive();
@@ -166,10 +166,14 @@ public class SimulationEnvironment {
                 if (animal.getAlive()) {
                     breedRabbits(animal);
                 }
+
+                if(animal instanceof Fox){
+                }
 //             System.out.println("Rabbit: "+ animal.getName() + " is " + animal.getAge());
             }
             incrementYears();
             getAnimals().addAll(getNewAnimals());
+            getAnimals().removeAll(getDeadAnimals());
             getNewAnimals().removeAll(getAnimals());
 
         }
@@ -187,10 +191,10 @@ public class SimulationEnvironment {
             for (Animal potentialPartner : getAnimals()) {
                 if (potentialPartner.canBreed() & potentialPartner.getAlive() && potentialPartner.getGender() == 2 && potentialPartner.getBreedingAge()==animal.getBreedingAge()) {
                     for (int i = 1; i <= randomLitterSize; i++) {
-                       if (potentialPartner.getBreedingAge()==3) {
+                       if (potentialPartner.getBreedingAge()==createRabbit().getBreedingAge()) {
                            Animal newRabbit = createRabbit();
                            getNewAnimals().add(newRabbit);
-                       } else {
+                       } else if(potentialPartner.getBreedingAge()==createFox().getBreedingAge()) {
                            Animal newFox = createFox();
                            getNewAnimals().add(newFox);
                        }
@@ -200,6 +204,14 @@ public class SimulationEnvironment {
             }
         }
 
+    }
+
+    private void foxHunt(){
+
+        for(Animal potentialFoods: getAnimals()){
+
+
+       }
     }
 
 
