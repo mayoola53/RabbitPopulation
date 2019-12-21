@@ -165,7 +165,7 @@ public class SimulationEnvironment {
                 }
                 if (animal.getAlive()) {
                     breedRabbits(animal);
-//                  foxHunt(animal);
+                  foxHunt(animal);
                 }
 
                 if(animal instanceof Fox){
@@ -208,22 +208,17 @@ public class SimulationEnvironment {
     }
 
     private void foxHunt(Animal potentialFox) {
-        if (potentialFox instanceof Fox) {
-            for (Animal potentialFood : getAnimals()) {
-               if(potentialFood instanceof Rabbit){
-                   Fox hunterFox = (Fox) potentialFox;
-                   Rabbit food = (Rabbit) potentialFood;
-                   if(hunterFox.getCanEat()==true) {
-                      hunterFox.setHungerLevel(hunterFox.getHungerLevel()-food.getFoodValue());
-                      food.setFoodValue(0);
-                      potentialFox = hunterFox;
-                      potentialFood = food;
-                   }
+      if(potentialFox.getBreedingAge()==createFox().getBreedingAge()){
+          for(Animal potentialFood: getAnimals()){
+              if(potentialFood.getBreedingAge()==createRabbit().getBreedingAge()){
+                 Fox hunter = (Fox) potentialFox;
+                 Rabbit food = (Rabbit) potentialFood;
+//                 getDeadAnimals().add(potentialFood);
+                 hunter.setHungerLevel(hunter.getHungerLevel()-food.getFoodValue());
+                 food.setFoodValue(0);
 
-               }
-            }
-        }
-
+              }
+          }
+      }
     }
-
 }

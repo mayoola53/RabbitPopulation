@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0305bcd-cf16-4ea7-a2fb-903c247666b3" name="Default Changelist" comment="can breed pair">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/ma/charactersController/SimulationEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/ma/charactersController/SimulationEnvironment.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="198" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1TFwxPCMd4xuynxZi6V8p4cmU63" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Employees" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sparta.ma.charactersController.Starter" />
+      <module name="RabbitPopulation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.ma.charactersController.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Starter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0305bcd-cf16-4ea7-a2fb-903c247666b3" name="Default Changelist" comment="" />
+      <created>1573069397215</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573069397215</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added an abstract class called animal which fox and rabbit, added a create rabbit method, addRabbitToList and strated createEnviroment method in SimulationEnviroment class.">
+      <created>1573079014462</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573079014462</updated>
+    </task>
+    <task id="LOCAL-00002" summary="began implementing rabbits breading, not working :(">
+      <created>1573164308001</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573164308002</updated>
+    </task>
+    <task id="LOCAL-00003" summary="can breed pair">
+      <created>1573426213964</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573426213964</updated>
+    </task>
+    <task id="LOCAL-00004" summary="can breed pair rate is low">
+      <created>1574620289745</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574620289745</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Added an abstract class called animal which fox and rabbit, added a create rabbit method, addRabbitToList and strated createEnviroment method in SimulationEnviroment class." />
+    <MESSAGE value="began implementing rabbits breading, not working :(" />
+    <MESSAGE value="can breed pair" />
+    <MESSAGE value="can breed pair rate is low" />
+    <option name="LAST_COMMIT_MESSAGE" value="can breed pair rate is low" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sparta/ma/charactersController/Starter.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/RabbitPopulation$Starter.ic" NAME="Starter Coverage Results" MODIFIED="1576620684982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.sparta.ma.charactersController.*</FILTER>
+    </SUITE>
+  </component>
+</project>
